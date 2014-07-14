@@ -1,19 +1,4 @@
 <?php
-require "apikey.php";
-require "OpenId.php";
-require "getInfo.php";
-
-/* Here we start session. This is required for the sessions to work! */
-
-session_start();
-
-/* This checks whether or not the session "SteamAuth" is set. */
-/* This will return either a boolean true or a boolean false. */
-/* True if the user is logged in and false if the user isn't. */
-
-if (!(isset($_SESSION['SteamAuth']) && $_SESSION['SteamAuth'] != 'hi')) {
-	$auth = false;
-} else $auth = true;
 
 include "header.php";
 include "vendor/autoload.php";
