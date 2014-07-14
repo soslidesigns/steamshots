@@ -1,7 +1,9 @@
 <?php
-$pagetitle = "Updates";
+$pagetitle = "About Us";
 
 include "header.php";
+
+echo '<br />';
 
 echo 'Hi';
 

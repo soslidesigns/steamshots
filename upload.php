@@ -1,6 +1,6 @@
 <?php
 
-$pagetitle = "Screen Shots";
+$pagetitle = "Uploader";
 
 include "header.php";
 include "vendor/autoload.php";
@@ -12,10 +12,11 @@ if(!isset($_SESSION['steamid'])) {
     
 }  else {
     include ('userInfo.php');
-	
+
     //Protected content
-    echo "<div style=\"text-align:right;\"><br /><strong>Welcome to your Screen Shots,</strong><a href=\"profile.php\">" . $steamprofile['personaname'] . "</a><br /></div>";
+    echo "<div style=\"text-align:right;\"><br /><strong>Welcome to SteamShots Uploader,</strong><a href=\"profile.php\">" . $steamprofile['personaname'] . "</a><br /></div>";
 	
+   	include "uploader.php";
 }    
 
 include "footer.php";
