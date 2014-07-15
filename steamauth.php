@@ -5,14 +5,14 @@ require ('openid.php');
 $api_key = "DB9ABD17ACE86C8BB2F03DFC9A9A1990"; //Insert API Key here!
 
 function logoutbutton() {
-    echo "<br /><a href=\"logout.php\">Logout</a>"; //logout button
+    echo "<br /><a href=\"http://www.steamshots.com/logout.php\">Logout</a>"; //logout button
 }
 
 function steamlogin()
 {
 try {
     // Change 'localhost' to your domain name.
-    $openid = new LightOpenID('http://www.soslidesigns.com');
+    $openid = new LightOpenID('http://www.steamshots.com');
     if(!$openid->mode) {
         if(isset($_GET['login'])) {
             $openid->identity = 'http://steamcommunity.com/openid';
@@ -29,10 +29,9 @@ try {
                 $ptn = "/^http:\/\/steamcommunity\.com\/openid\/id\/(7[0-9]{15,25}+)$/";
                 preg_match($ptn, $id, $matches);
               
-                session_start();
                 $_SESSION['steamid'] = $matches[1]; 
                 
-                 header('Location: '.$_SERVER['REQUEST_URI']);
+                 header('Location: index.php');
                  
         } else {
                 echo "User is not logged in.\n";
@@ -43,5 +42,9 @@ try {
     echo $e->getMessage();
 }
 }
-
+if(empty($_SESSION['steamid'])) {
+    
+} else {
+    // We are logged in
+}
 ?>

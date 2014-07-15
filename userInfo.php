@@ -23,4 +23,5 @@
     $steamprofile['avatarmedium'] = $content['response']['players'][0]['avatarmedium'];
     $steamprofile['avatarfull'] = $content['response']['players'][0]['avatarfull'];
     $steamprofile['personastate'] = $content['response']['players'][0]['personastate'];
+	
 ?>
